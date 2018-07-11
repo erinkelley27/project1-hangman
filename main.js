@@ -1,10 +1,21 @@
 // Submit a word
+let submitWordButton = document.querySelector('#submit-word-button')
+let word = document.querySelector('#word-input-field').value
 
-// Create blank spaces - quantity to equal length of the string
+// Split the string into an array
+let wordArray = word.split(' ')
 
-// Split the string into an array (like the palindrome)
-
-// Create blank spaces - quantity to equal length of the array - map?
+// Create blank spaces - quantity to equal length of the array (map?)
+submitWordButton.addEventListener('click', function (evt) {
+  evt.preventDefault()
+  let blanksArray = []
+  for (let i = 0; i <= wordArray.length; i++) {
+    blanksArray.push('_')
+    // Return them to the blanks spaces div
+    let blankSpaces = document.createElement('p')
+    document.blank-spaces.appenChild(blankSpaces)
+  }
+})
 
 // Submit a guess letter
 
