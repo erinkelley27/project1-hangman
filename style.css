@@ -1,7 +1,7 @@
 body {
     background: white;
     text-align: center;
-    margin: 0 auto;
+    font-family: 'PT Sans', sans-serif;
 }
 
 h1 {
@@ -15,8 +15,8 @@ h1 {
 }
 
 main {
-    padding: 20px 0px 20px 0px;
-    margin: 0px auto;
+    padding: 5% 5% 5% 5%;
+    margin: 0px 25% 0px 25%;
     display: grid;
     grid-template-rows: 100px 50px 50px 25px 75px 50px 100px;
     grid-template-columns: 25% 50px 25px 25px 25px 25px 25px 50px 25%;
