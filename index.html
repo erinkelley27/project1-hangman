@@ -11,13 +11,15 @@
 <body>
 
 <header>
-    <h1>HANGMAN</h1>
+    <h1>H A N G M A N</h1>
 </header>
 
 <div class="word-input">
     <p>Enter a word for your partner to guess!</p>
-    <input type="text" id="word-input-field">
-    <input type="submit" id="word-submit-button">
+    <form>
+        <input type="text" id="word-input-field"></input>
+        <button id="submit-word-button">Submit Word</button>
+    </form>
 </div>
 
 <main>
@@ -47,13 +49,15 @@
 </main>
 
 <div class="blank-spaces">
-    <p>blank spaces go here</p>
+
 </div>
 
 <div class="guess-letter">
     <p>Guess a letter!</p>
-    <input type="text" class="letter-input">
-    <input type="submit" class="letter-submit">
+    <form>
+        <input type="text" id="letter-input-field"></input>
+        <button id="submit-letter-button">Submit Letter</button>
+    </form>
 </div>
 
 <footer>
