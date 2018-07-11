@@ -1,0 +1,29 @@
+body {
+    background: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    background: #FFB6C1;
+}
+
+.word-input {
+    background: #C0C0C0;
+}
+
+main {
+
+}
+
+.blank-spaces {
+    background: #C0C0C0;
+}
+
+.guess-letter {
+
+}
+
+footer {
+    background: #FFB6C1;
+}
