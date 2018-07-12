@@ -9,25 +9,26 @@ let blanksArray = []
 submitWordButton.addEventListener('click', function (evt) {
   // Split the string into an array
   let wordArray = word.value.split('')
-  for (let i = 0; i < wordArray.length; i++) { 
+  for (let i = 0; i < wordArray.length; i++) {
     blanksArray.push('_')
     evt.preventDefault()
     console.log(word.value)
     console.log(wordArray)
     console.log(blanksArray)
   }
-// Add the blanks spaces into the blankSpaces div
+  // Add the blanks spaces into the blankSpaces div
   for (let i = 0; i < blanksArray.length; i++) {
     let blanksDiv = document.createElement('ul')
     let blankCharacters = document.createTextNode('_ ')
     blanksDiv.appendChild(blankCharacters)
     document.getElementById('blank-spaces').appendChild(blanksDiv)
   }
+  // Submit a guess letter
+  let submitLetterButton = document.querySelector('#submit-letter-button')
+  submitLetterButton.addEventListener('click', function (evt) {
+    let letter = document.querySelector('#letter-input-field').value
+  })
 })
-
-// Submit a guess letter
-// let submitLetterButton = document.querySelector('#submit-letter-button')
-// let letter = document.querySelector('#letter-input-field').value
 
 // // Check if guess letter matches any letters in the array
 // for (let i = 0; i < wordArray.length; i++) {
