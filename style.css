@@ -164,9 +164,10 @@ main {
 #blank-spaces {
     background: #C0C0C0;
     padding: 20px 0px 20px 0px;
+    list-style-type: none;
 }
 
-ul {
+li {
     font-size: 30px;
     padding: 10px 10px 10px 10px;
     display: inline;

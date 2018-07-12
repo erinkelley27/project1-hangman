@@ -22,7 +22,7 @@ submitWordButton.addEventListener('click', function (evt) {
   }
   // Add the blanks spaces into the #blank-spaces div
   for (let i = 0; i < blanksArray.length; i++) {
-    let blanksDiv = document.createElement('ul')
+    let blanksDiv = document.createElement('li')
     blanksDiv.setAttribute('id', '[i]')
     let blankCharacters = document.createTextNode(blanksArray[i])
     blanksDiv.appendChild(blankCharacters)
@@ -37,7 +37,7 @@ submitWordButton.addEventListener('click', function (evt) {
       if (letter.value === wordArray[i]) {
         console.log('true')
         // Set a variable to the index(es) where the letter value is true?
-        document.getElementById('[i]').innerHTML = letter.value
+        document.querySelector('[i]').innerHTML = letter.value
       } else { // Create a hangman array and loop through, changing the first one that is not pink
         console.log('false')
       }
