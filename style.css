@@ -161,7 +161,7 @@ main {
     background: aqua;
 }
 
-.blank-spaces {
+#blank-spaces {
     background: #C0C0C0;
     padding: 20px 0px 20px 0px;
 }

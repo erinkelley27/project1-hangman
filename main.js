@@ -1,6 +1,11 @@
-// Submit a word
+// Submit a word button
 let submitWordButton = document.querySelector('#submit-word-button')
 let word = document.querySelector('#word-input-field')
+
+// Submit a letter button
+let submitLetterButton = document.querySelector('#submit-letter-button')
+let letter = document.querySelector('#letter-input-field')
+console.log(letter)
 
 // Create blanks array
 let blanksArray = []
@@ -10,32 +15,30 @@ submitWordButton.addEventListener('click', function (evt) {
   // Split the string into an array
   let wordArray = word.value.split('')
   for (let i = 0; i < wordArray.length; i++) {
-    blanksArray.push('_')
+    blanksArray.push('_ ')
     evt.preventDefault()
     console.log(word.value)
     console.log(wordArray)
     console.log(blanksArray)
   }
-  // Add the blanks spaces into the blankSpaces div
+  // Add the blanks spaces into the #blank-spaces div
   for (let i = 0; i < blanksArray.length; i++) {
     let blanksDiv = document.createElement('ul')
-    let blankCharacters = document.createTextNode('_ ')
+    let blankCharacters = document.createTextNode(blanksArray[i])
     blanksDiv.appendChild(blankCharacters)
     document.getElementById('blank-spaces').appendChild(blanksDiv)
   }
-  // Submit a guess letter
-  let submitLetterButton = document.querySelector('#submit-letter-button')
+  // Submit a guess letter - will case matter?
   submitLetterButton.addEventListener('click', function (evt) {
-    let letter = document.querySelector('#letter-input-field').value
-    evt.preventDefault()
+    console.log(letter.value)
     // Check if guess letter matches any letters in the array
     for (let i = 0; i < wordArray.length; i++) {
-      if letter === wordArray[i]
-      return true
-    // If no, body part appears - head, body, left arm, right arm, left leg, right leg
-    // Change the color from aqua to pink for the appropriate CSS grid child
-    } else {
-      return false
+      if (letter.value === wordArray[i]) {
+        console.log('true')
+      } else {
+        console.log('false')
+      }
+      evt.preventDefault()
     }
   })
 })
