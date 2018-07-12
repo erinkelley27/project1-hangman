@@ -27,20 +27,18 @@ submitWordButton.addEventListener('click', function (evt) {
   let submitLetterButton = document.querySelector('#submit-letter-button')
   submitLetterButton.addEventListener('click', function (evt) {
     let letter = document.querySelector('#letter-input-field').value
+    evt.preventDefault()
+    // Check if guess letter matches any letters in the array
+    for (let i = 0; i < wordArray.length; i++) {
+      if letter === wordArray[i]
+      return true
+    // If no, body part appears - head, body, left arm, right arm, left leg, right leg
+    // Change the color from aqua to pink for the appropriate CSS grid child
+    } else {
+      return false
+    }
   })
 })
-
-// // Check if guess letter matches any letters in the array
-// for (let i = 0; i < wordArray.length; i++) {
-//     if letter === wordArray[i]
-// // If yes, replace the space with the letter
-//     return true
-// }
-// // If no, body part appears - head, body, left arm, right arm, left leg, right leg
-// // Change the color from aqua to pink for the appropriate CSS grid child
-// else {
-//     return false
-// }
 
 // // Determine if player has won or lost
 // function callGame () {
