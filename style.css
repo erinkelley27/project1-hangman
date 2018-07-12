@@ -2,11 +2,13 @@ body {
     background: white;
     text-align: center;
     font-family: 'PT Sans', sans-serif;
+    margin: 0px 10%;
 }
 
 h1 {
     background: #FFB6C1;
     padding: 20px 0px 20px 0px;
+    margin: 0px;
 }
 
 .word-input {
@@ -15,8 +17,7 @@ h1 {
 }
 
 main {
-    padding: 5% 5% 5% 5%;
-    margin: 0px 25% 0px 25%;
+    margin: 50px 25%;
     display: grid;
     grid-template-rows: 100px 50px 50px 25px 75px 50px 100px;
     grid-template-columns: 25% 50px 25px 25px 25px 25px 25px 50px 25%;
