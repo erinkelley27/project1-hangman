@@ -5,7 +5,6 @@ let word = document.querySelector('#word-input-field')
 // Submit a letter button
 let submitLetterButton = document.querySelector('#submit-letter-button')
 let letter = document.querySelector('#letter-input-field')
-console.log(letter)
 
 // Create blanks array
 let blanksArray = []
@@ -24,26 +23,29 @@ submitWordButton.addEventListener('click', function (evt) {
   // Add the blanks spaces into the #blank-spaces div
   for (let i = 0; i < blanksArray.length; i++) {
     let blanksDiv = document.createElement('ul')
+    blanksDiv.setAttribute('id', '[i]')
     let blankCharacters = document.createTextNode(blanksArray[i])
     blanksDiv.appendChild(blankCharacters)
     document.getElementById('blank-spaces').appendChild(blanksDiv)
   }
   // Submit a guess letter - will case matter?
   submitLetterButton.addEventListener('click', function (evt) {
+    evt.preventDefault()
     console.log(letter.value)
     // Check if guess letter matches any letters in the array
     for (let i = 0; i < wordArray.length; i++) {
       if (letter.value === wordArray[i]) {
         console.log('true')
-      } else {
+        // Set a variable to the index(es) where the letter value is true?
+        document.getElementById('[i]').innerHTML = letter.value
+      } else { // Create a hangman array and loop through, changing the first one that is not pink
         console.log('false')
       }
-      evt.preventDefault()
     }
   })
 })
 
-// // Determine if player has won or lost
+// // Determine if player has won or lost - should I do this in the if/else statement above?
 // function callGame () {
 // // If all blank spaces are replaced with letters, create an alert winner
 
