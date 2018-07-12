@@ -17,15 +17,13 @@ submitWordButton.addEventListener('click', function (evt) {
     console.log(blanksArray)
   }
 // Add the blanks spaces into the blankSpaces div
-//   let blanks = document.createElement('div')
-//   blanksArray = getElementsByClassName('blanksArray')
-//   blanksArray[0].blank - spaces.appendChild(blanks)
-//   blanks.id = 'blanks'
-
-//   for (let i = 0; i < blanksArray.length; i++) {
-//     blanks.appendChild(blanksArray[0])
-//   }
-// })
+  for (let i = 0; i < blanksArray.length; i++) {
+    let blanksDiv = document.createElement('ul')
+    let blankCharacters = document.createTextNode('_ ')
+    blanksDiv.appendChild(blankCharacters)
+    document.getElementById('blank-spaces').appendChild(blanksDiv)
+  }
+})
 
 // Submit a guess letter
 // let submitLetterButton = document.querySelector('#submit-letter-button')

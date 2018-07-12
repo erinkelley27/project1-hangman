@@ -166,6 +166,12 @@ main {
     padding: 20px 0px 20px 0px;
 }
 
+ul {
+    font-size: 30px;
+    padding: 10px 10px 10px 10px;
+    display: inline;
+}
+
 .guess-letter {
     padding: 20px 0px 20px 0px;
 }
