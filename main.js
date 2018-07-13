@@ -48,7 +48,7 @@ submitWordButton.addEventListener('click', function (evt) {
     } else if (wordArray.includes(letter.value)) {
       winScore = winScore + 1
       document.getElementById(wordArray.indexOf(letter.value)).innerHTML = letter.value
-      // Make hangman change colors if user guesses incorrectly
+    // Make hangman change colors if user guesses incorrectly
     } else {
       console.log('false')
       lossScore = lossScore + 1
