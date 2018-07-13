@@ -50,27 +50,27 @@ submitWordButton.addEventListener('click', function (evt) {
       if (lossScore === 1) {
         let head = document.querySelector('#hangman-head')
         head.idName = 'hangman-head'
-        head.style.backgroundColor = 'yellow'
+        head.style.backgroundColor = 'lightpink'
       } else if (lossScore === 2) {
         let body = document.querySelector('#hangman-body')
         body.idName = 'hangman-body'
-        body.style.backgroundColor = 'yellow'
+        body.style.backgroundColor = 'lightpink'
       } else if (lossScore === 3) {
         let leftArm = document.querySelector('#hangman-left-arm')
         leftArm.idName = 'hangman-left-arm'
-        leftArm.style.backgroundColor = 'yellow'
+        leftArm.style.backgroundColor = 'lightpink'
       } else if (lossScore === 4) {
         let rightArm = document.querySelector('#hangman-right-arm')
         rightArm.idName = 'hangman-right-arm'
-        rightArm.style.backgroundColor = 'yellow'
+        rightArm.style.backgroundColor = 'lightpink'
       } else if (lossScore === 5) {
         let leftLeg = document.querySelector('#hangman-left-leg')
         leftLeg.idName = 'hangman-left-leg'
-        leftLeg.style.backgroundColor = 'yellow'
+        leftLeg.style.backgroundColor = 'lightpink'
       } else if (lossScore === 6) {
         let rightLeg = document.querySelector('#hangman-right-leg')
         rightLeg.idName = 'hangman-right-leg'
-        rightLeg.style.backgroundColor = 'yellow'
+        rightLeg.style.backgroundColor = 'lightpink'
         // Set alert for loser
         window.alert('Better luck next time - try again')
       }
@@ -85,8 +85,7 @@ submitWordButton.addEventListener('click', function (evt) {
 //   window.alert('Winner!')
 // }
 
-// Remove console logs
-
 // EXTRAS
+// Make it work for words that have repeat letters
 // Clear the input field after submit is clicked
 // Automatically reset after the game is over - clicks ok on the winner/loss alerts?

@@ -50,7 +50,7 @@ main {
 #hangman-head {
     grid-row: 2 / span 1;
     grid-column: 4 / span 3;
-    background: lightpink; 
+    background: aqua; 
 }
 
 #hangman-5 {
@@ -80,7 +80,7 @@ main {
 #hangman-body {
     grid-row: 3 / span 3;
     grid-column: 3 / span 5;
-    background: lightpink;
+    background: aqua;
 }
 
 #hangman-9 {
@@ -92,13 +92,13 @@ main {
 #hangman-left-arm {
     grid-row: 4 / span 1;
     grid-column: 2 / span 1;
-    background: lightpink;
+    background: aqua;
 }
 
 #hangman-right-arm {
     grid-row: 4 / span 1;
     grid-column: 8 / span 1;
-    background: lightpink;
+    background: aqua;
 }
 
 #hangman-10 {
@@ -128,7 +128,7 @@ main {
 #hangman-left-leg {
     grid-row: 6 / span 1;
     grid-column: 4 / span 1;
-    background: lightpink;
+    background: aqua;
 }
 
 #hangman-14 {
@@ -140,7 +140,7 @@ main {
 #hangman-right-leg {
     grid-row: 6 / span 1;
     grid-column: 6 / span 1;
-    background: lightpink;
+    background: aqua;
 }
 
 #hangman-15 {
