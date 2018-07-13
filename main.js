@@ -58,13 +58,15 @@ submitWordButton.addEventListener('click', function (evt) {
     console.log(letter.value)
     // Add letters to usedLetters array to be checked for later so the user cannot repeat a letter
     usedLetters.push(letter.value)
+    // Set an alert if user guesses the same letter twice
+    if usedLetters.includes(letter.value)) {
+      window.alert('You already guessed that one!')
+      winScore = winScore + 0
+      lossScore = lossScore = 0
     // Make letter appear in correct blank space if user guesses correctly
-    if (wordArray.includes(letter.value)) {
+    } else if (wordArray.includes(letter.value)) {
       winScore = winScore + 1
       document.getElementById(wordArray.indexOf(letter.value)).innerHTML = letter.value
-    // Set an alert if user guesses the same letter twice
-    } else if (usedLetters.includes(letter.value)) {
-      alert('You already guessed that one!')
       // Make hangman change colors if user guesses incorrectly
     } else {
       console.log('false')
@@ -100,9 +102,9 @@ submitWordButton.addEventListener('click', function (evt) {
 
 // Set an alert for if the user won or lost
 if (winScore === blanksArray.length) {
-  alert('Winner')
+  window.alert('Winner')
 } else if (lossScore === 6) {
-  alert('Better luck next time - try again')
+  window.alert('Better luck next time - try again')
 }
 
 // Determine if player has won or lost - should I do this in the if/else statement above?
