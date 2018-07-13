@@ -77,13 +77,12 @@ submitWordButton.addEventListener('click', function (evt) {
     }
     // Add letters to usedLetters array to be checked for later so the user cannot repeat a letter
     usedLetters.push(letter.value)
+    // Set alert for winner
+    if (winScore === wordArray.length) {
+      window.alert('Winner!')
+    }
   })
 })
-
-// Set alert for winner
-// if (winScore === wordArray.length) {
-//   window.alert('Winner!')
-// }
 
 // EXTRAS
 // Make it work for words that have repeat letters
