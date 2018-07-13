@@ -6,11 +6,32 @@ let word = document.querySelector('#word-input-field')
 let submitLetterButton = document.querySelector('#submit-letter-button')
 let letter = document.querySelector('#letter-input-field')
 
-// Create blanks array
+// Create blanks arrays
 let blanksArray = []
 
-// Set a base score
-let score = 0
+// Create array for letters the user has already guessed
+let usedLetters = []
+
+// Declare hangman variables and ids
+// let head = document.querySelector('#hangman-head')
+// head.idName = 'hangman-head'
+// let body = document.querySelector('#hangman-body')
+// body.idName = 'hangman-body'
+// let leftArm = document.querySelector('#hangman-left-arm')
+// leftArm.idName = 'hangman-left-arm'
+// let rightArm = document.querySelector('#hangman-right-arm')
+// rightArm.idName = 'hangman-right-arm'
+// let leftLeg = document.querySelector('#hangman-left-leg')
+// leftLeg.idName = 'hangman-left-leg'
+// let rightLeg = document.querySelector('#hangman-right-leg')
+// rightLeg.idName = 'hangman-right-leg'
+
+// // Declare hangman array
+// let hangman = [head, body, leftArm, rightArm, leftLeg, rightLeg]
+
+// Declare score variables
+let winScore = 0
+let lossScore = 0
 
 // Create blank spaces in the blanks - quantity to equal length of the word array
 submitWordButton.addEventListener('click', function (evt) {
@@ -35,26 +56,54 @@ submitWordButton.addEventListener('click', function (evt) {
   submitLetterButton.addEventListener('click', function (evt) {
     evt.preventDefault()
     console.log(letter.value)
-    // Check if guess letter matches any letters in the array
-    for (let i = 0; i < wordArray.length; i++) {
-    // The letter appears in place of a blank when the user guesses correctly
-      if (letter.value === wordArray[i]) {
-        console.log('true')
-        document.getElementById([i]).innerHTML = letter.value
-      // The hangman appears part by part when the user guesses incorrectly
-      } else if (letter.value !== wordArray[i]) { // Create a hangman array and loop through, changing the first one that is not pink
-        console.log('false')
-        score = (score + 1)
-        if (score === blanksArray.length) {
-          let head = document.querySelector('#hangman-head')
-          head.idName = 'hangman-head'
-          head.style.backgroundColor = 'yellow'
-        }
+    // Add letters to usedLetters array to be checked for later so the user cannot repeat a letter
+    usedLetters.push(letter.value)
+    // Make letter appear in correct blank space if user guesses correctly
+    if (wordArray.includes(letter.value)) {
+      winScore = winScore + 1
+      document.getElementById(wordArray.indexOf(letter.value)).innerHTML = letter.value
+    // Set an alert if user guesses the same letter twice
+    } else if (usedLetters.includes(letter.value)) {
+      alert('You already guessed that one!')
+      // Make hangman change colors if user guesses incorrectly
+    } else {
+      console.log('false')
+      lossScore = lossScore + 1
+      if (lossScore === 1) {
+        let head = document.querySelector('#hangman-head')
+        head.idName = 'hangman-head'
+        head.style.backgroundColor = 'yellow'
+      } else if (lossScore === 2) {
+        let body = document.querySelector('#hangman-body')
+        body.idName = 'hangman-body'
+        body.style.backgroundColor = 'yellow'
+      } else if (lossScore === 3) {
+        let leftArm = document.querySelector('#hangman-left-arm')
+        leftArm.idName = 'hangman-left-arm'
+        leftArm.style.backgroundColor = 'yellow'
+      } else if (lossScore === 4) {
+        let rightArm = document.querySelector('#hangman-right-arm')
+        rightArm.idName = 'hangman-right-arm'
+        rightArm.style.backgroundColor = 'yellow'
+      } else if (lossScore === 5) {
+        let leftLeg = document.querySelector('#hangman-left-leg')
+        leftLeg.idName = 'hangman-left-leg'
+        leftLeg.style.backgroundColor = 'yellow'
+      } else if (lossScore === 6) {
+        let rightLeg = document.querySelector('#hangman-right-leg')
+        rightLeg.idName = 'hangman-right-leg'
+        rightLeg.style.backgroundColor = 'yellow'
       }
-      // What happens when a repeat letter has been guessed already?
     }
   })
 })
+
+// Set an alert for if the user won or lost
+if (winScore === blanksArray.length) {
+  alert('Winner')
+} else if (lossScore === 6) {
+  alert('Better luck next time - try again')
+}
 
 // Determine if player has won or lost - should I do this in the if/else statement above?
 // function callGame () {
@@ -65,3 +114,10 @@ submitWordButton.addEventListener('click', function (evt) {
 // EXTRAS
 // Clear the input field after submit is clicked
 // Automatically reset after the game is over - clicks ok on an alert?
+
+// lossScore = lossScore + 1
+// if (lossScore === blanksArray.length) {
+//   let head = document.querySelector('#hangman-head')
+//   head.idName = 'hangman-head'
+//   head.style.backgroundColor = 'yellow'
+// What happens when a repeat letter has been guessed already?
