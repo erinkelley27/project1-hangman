@@ -23,9 +23,6 @@ submitWordButton.addEventListener('click', function (evt) {
   let wordArray = word.value.split('')
   for (let i = 0; i < wordArray.length; i++) {
     blanksArray.push('_ ')
-    console.log(word.value)
-    console.log(wordArray)
-    console.log(blanksArray)
   }
   // Add the blanks spaces into the #blank-spaces ul
   for (let i = 0; i < blanksArray.length; i++) {
@@ -38,7 +35,6 @@ submitWordButton.addEventListener('click', function (evt) {
   // Submit a guess letter - will case matter?
   submitLetterButton.addEventListener('click', function (evt) {
     evt.preventDefault()
-    console.log(letter.value)
     // Set an alert if user guesses the same letter twice
     if (usedLetters.includes(letter.value)) {
       window.alert('You already guessed that one!')
@@ -50,7 +46,6 @@ submitWordButton.addEventListener('click', function (evt) {
       document.getElementById(wordArray.indexOf(letter.value)).innerHTML = letter.value
     // Make hangman change colors if user guesses incorrectly
     } else {
-      console.log('false')
       lossScore = lossScore + 1
       if (lossScore === 1) {
         let head = document.querySelector('#hangman-head')
@@ -85,19 +80,13 @@ submitWordButton.addEventListener('click', function (evt) {
   })
 })
 
-// Determine if player has won or lost - should I do this in the if/else statement above?
-// function callGame () {
-// If all blank spaces are replaced with letters, create an alert winner
-// If all body parts have appeared, create an alert loser
+// Set alert for winner
+// if (winScore === wordArray.length) {
+//   window.alert('Winner!')
+// }
+
 // Remove console logs
 
 // EXTRAS
 // Clear the input field after submit is clicked
-// Automatically reset after the game is over - clicks ok on an alert?
-
-// lossScore = lossScore + 1
-// if (lossScore === blanksArray.length) {
-//   let head = document.querySelector('#hangman-head')
-//   head.idName = 'hangman-head'
-//   head.style.backgroundColor = 'yellow'
-// What happens when a repeat letter has been guessed already?
+// Automatically reset after the game is over - clicks ok on the winner/loss alerts?
