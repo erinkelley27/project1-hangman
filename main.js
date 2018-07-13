@@ -39,7 +39,7 @@ submitWordButton.addEventListener('click', function (evt) {
     if (usedLetters.includes(letter.value)) {
       window.alert('You already guessed that one!')
       winScore = winScore + 0
-      lossScore = lossScore = 0
+      lossScore = lossScore - 0
     // Make letter appear in correct blank space if user guesses correctly
     } else if (wordArray.includes(letter.value)) {
       winScore = winScore + 1
@@ -84,7 +84,8 @@ submitWordButton.addEventListener('click', function (evt) {
   })
 })
 
-// EXTRAS
+// EXTRAS TO DO
 // Make it work for words that have repeat letters
 // Clear the input field after submit is clicked
+// Alert pops up before the change appears in the DOM - change this
 // Automatically reset after the game is over - clicks ok on the winner/loss alerts?
