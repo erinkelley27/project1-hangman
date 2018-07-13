@@ -12,23 +12,6 @@ let blanksArray = []
 // Create array for letters the user has already guessed
 let usedLetters = []
 
-// Declare hangman variables and ids
-// let head = document.querySelector('#hangman-head')
-// head.idName = 'hangman-head'
-// let body = document.querySelector('#hangman-body')
-// body.idName = 'hangman-body'
-// let leftArm = document.querySelector('#hangman-left-arm')
-// leftArm.idName = 'hangman-left-arm'
-// let rightArm = document.querySelector('#hangman-right-arm')
-// rightArm.idName = 'hangman-right-arm'
-// let leftLeg = document.querySelector('#hangman-left-leg')
-// leftLeg.idName = 'hangman-left-leg'
-// let rightLeg = document.querySelector('#hangman-right-leg')
-// rightLeg.idName = 'hangman-right-leg'
-
-// // Declare hangman array
-// let hangman = [head, body, leftArm, rightArm, leftLeg, rightLeg]
-
 // Declare score variables
 let winScore = 0
 let lossScore = 0
@@ -56,10 +39,8 @@ submitWordButton.addEventListener('click', function (evt) {
   submitLetterButton.addEventListener('click', function (evt) {
     evt.preventDefault()
     console.log(letter.value)
-    // Add letters to usedLetters array to be checked for later so the user cannot repeat a letter
-    usedLetters.push(letter.value)
     // Set an alert if user guesses the same letter twice
-    if usedLetters.includes(letter.value)) {
+    if (usedLetters.includes(letter.value)) {
       window.alert('You already guessed that one!')
       winScore = winScore + 0
       lossScore = lossScore = 0
@@ -95,17 +76,14 @@ submitWordButton.addEventListener('click', function (evt) {
         let rightLeg = document.querySelector('#hangman-right-leg')
         rightLeg.idName = 'hangman-right-leg'
         rightLeg.style.backgroundColor = 'yellow'
+        // Set alert for loser
+        window.alert('Better luck next time - try again')
       }
     }
+    // Add letters to usedLetters array to be checked for later so the user cannot repeat a letter
+    usedLetters.push(letter.value)
   })
 })
-
-// Set an alert for if the user won or lost
-if (winScore === blanksArray.length) {
-  window.alert('Winner')
-} else if (lossScore === 6) {
-  window.alert('Better luck next time - try again')
-}
 
 // Determine if player has won or lost - should I do this in the if/else statement above?
 // function callGame () {
